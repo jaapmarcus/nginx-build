@@ -6,7 +6,7 @@ zlib_version="1.2.11"
 
 
 
-wget "https://nginx.org/download/nginx-$version.tar.gz" | tar -xf
+wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" | tar -xf
 
 # nginx_cache_purge
 git clone https://github.com/nginx-modules/ngx_cache_purge
