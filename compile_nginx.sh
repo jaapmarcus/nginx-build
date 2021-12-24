@@ -6,7 +6,7 @@ zlib_version="1.2.11"
 
 
 cd ./
-wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" | tar -xz
+wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" -O - | tar -xz
 
 # nginx_cache_purge
 git clone https://github.com/nginx-modules/ngx_cache_purge
@@ -15,7 +15,7 @@ git clone https://github.com/nginx-modules/ngx_cache_purge
 git clone https://github.com/google/ngx_brotli.git
 
 # Download zlib
-wget "https://zlib.net/zlib-$zlib_version.tar.gz" | tar -xz
+wget "https://zlib.net/zlib-$zlib_version.tar.gz" -O - | tar -xz
 
 cd ./nginx-$nginx_version/
 
