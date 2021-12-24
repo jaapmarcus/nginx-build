@@ -12,7 +12,7 @@ wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" -O - | tar -xz
 git clone https://github.com/nginx-modules/ngx_cache_purge
 
 # brotili 
-git clone https://github.com/google/ngx_brotli.git
+git clone --recurse-submodules https://github.com/google/ngx_brotli.git 
 
 # Download zlib
 wget "https://zlib.net/zlib-$zlib_version.tar.gz" -O - | tar -xz
