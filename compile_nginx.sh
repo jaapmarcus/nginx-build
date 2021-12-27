@@ -21,5 +21,5 @@ cd ./nginx-$nginx_version/
 
 ./configure --with-compat --add-dynamic-module=../ngx_brotli --with-zlib=../zlib-1.2.11 --add-dynamic-module=../ngx_cache_purge
 make modules
-cd ... 
+cd ..
 tar -cvf ./modules.tar.gz ./nginx-$nginx_version/objs/*.so
