@@ -20,5 +20,6 @@ wget "https://zlib.net/zlib-$zlib_version.tar.gz" -O - | tar -xz
 cd ./nginx-$nginx_version/
 
 ./configure --with-compat --add-dynamic-module=../ngx_brotli --with-zlib=../zlib-1.2.11 --add-dynamic-module=../ngx_cache_purge
-make modules 
-tar -xcvf modules.tar.gz ./objs/*.so
+make modules
+cd ... 
+tar -cvf ./modules.tar.gz ./nginx-$nginx_version/objs/*.so
