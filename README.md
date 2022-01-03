@@ -2,7 +2,7 @@
 
 ## Install
 
-- Download modules
+- Download modules or build the modules your self
 - Copy modules to /etc/nginx/modules/
 - Copy modules-availble/ngx_wanted_module to /etc/nginx/modules-enabled 
 - Add changes to the templates used or nginx.conf depending on changes wanted and how you want to use them 
