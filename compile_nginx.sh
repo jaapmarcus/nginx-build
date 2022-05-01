@@ -22,7 +22,7 @@ git clone --recurse-submodules https://github.com/google/ngx_brotli.git
 # Download zlib
 wget "https://zlib.net/zlib-$zlib_version.tar.gz" -O - | tar -xz
 wget "https://github.com/PhilipHazel/pcre2/releases/download/pcre2-$pcre_version/pcre2'$pcre_version.tar.gz" -O - | tar -xz
-wget "https://www.openssl.org/source/openssl-'$openssl_version'.tar.gz" -O - | tar -xz
+wget "https://www.openssl.org/source/openssl-$openssl_version.tar.gz" -O - | tar -xz
 
 
 cd ./nginx-$nginx_version/
