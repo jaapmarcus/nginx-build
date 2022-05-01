@@ -5,7 +5,7 @@ nginx_version="1.21.5"
 zlib_version="1.2.11"
 
 apt-get update
-apt-get install wget git -y
+apt-get install wget git make gcc -y
 
 cd ./
 wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" -O - | tar -xz
