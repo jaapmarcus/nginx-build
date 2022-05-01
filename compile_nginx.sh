@@ -27,7 +27,7 @@ wget "https://www.openssl.org/source/openssl-$openssl_version.tar.gz" -O - | tar
 
 cd ./nginx-$nginx_version/
 
-./configure --with-compat --add-dynamic-module=../ngx_brotli --with-zlib=../zlib-1.2.12 --add-dynamic-module=../ngx_cache_purge --with-pcre=../pcre2-$pcre_version --with-openssl=../openssl-$openssl_version \
+./configure --with-compat --add-dynamic-module=../ngx_brotli --with-zlib=../zlib-$zlib_version --add-dynamic-module=../ngx_cache_purge --with-pcre=../pcre2-$pcre_version --with-openssl=../openssl-$openssl_version 
 make modules
 cd ..
 tar -cvf ./modules.tar.gz ./nginx-$nginx_version/objs/*.so
