@@ -4,6 +4,7 @@
 nginx_version="1.21.5"
 zlib_version="1.2.11"
 
+apt-get update
 apt-get install wget git -y
 
 cd ./
