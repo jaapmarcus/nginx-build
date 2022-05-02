@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 #set versions
-nginx_version="1.21.5"
+nginx_version="1.21.6"
 zlib_version="1.2.12"
 pcre_version="10.39"
 openssl_version="3.0.2"
