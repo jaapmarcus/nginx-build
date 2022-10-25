@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 #set versions
-nginx_version="1.21.6"
-zlib_version="1.2.12"
+nginx_version="1.23.2"
+zlib_version="1.2.13"
 pcre_version="10.39"
 openssl_version="3.0.2"
 
@@ -20,7 +20,7 @@ git clone https://github.com/nginx-modules/ngx_cache_purge
 git clone --recurse-submodules https://github.com/google/ngx_brotli.git 
 
 # Download zlib
-wget "https://zlib.net/zlib-$zlib_version.tar.gz" -O - | tar -xz
+wget "https://github.com/madler/zlib/archive/refs/tags/v$zlib_version.tar.gz" -O - | tar -xz
 wget "https://github.com/PhilipHazel/pcre2/releases/download/pcre2-$pcre_version/pcre2-$pcre_version.tar.gz" -O - | tar -xz
 wget "https://www.openssl.org/source/openssl-$openssl_version.tar.gz" -O - | tar -xz
 
