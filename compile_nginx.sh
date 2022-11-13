@@ -3,8 +3,8 @@
 #set versions
 nginx_version="1.23.2"
 zlib_version="1.2.13"
-pcre_version="10.39"
-openssl_version="3.0.2"
+pcre_version="10.40"
+openssl_version="3.0.7"
 
 
 apt-get update
