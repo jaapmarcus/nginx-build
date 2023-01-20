@@ -14,7 +14,7 @@ cd ./
 wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" -O - | tar -xz
 
 # nginx_cache_purge
-git clone https://github.com/nginx-modules/ngx_cache_purge
+git clone https://github.com/nginx-modules/ngx_cache_purge.git
 
 # brotili 
 git clone --recurse-submodules https://github.com/google/ngx_brotli.git 
