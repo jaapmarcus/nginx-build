@@ -1,10 +1,10 @@
 #!/bin/bash 
 
 #set versions
-nginx_version="1.23.2"
-zlib_version="1.2.13"
-pcre_version="10.40"
-openssl_version="3.0.7"
+nginx_version="1.28.0"
+zlib_version="1.3.1"
+pcre_version="10.45"
+openssl_version="3.5.0"
 
 
 apt-get update
@@ -13,11 +13,16 @@ apt-get install wget git make gcc -y
 cd ./
 wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" -O - | tar -xz
 
+# ngx_devel_kit
+git clone https://github.com/vision5/ngx_devel_kit.git
+
+# ngix set-misc-nginx-module
+git clone https://github.com/openresty/set-misc-nginx-module.git
 # nginx_cache_purge
 git clone https://github.com/nginx-modules/ngx_cache_purge.git
 
-# brotili 
-git clone --recurse-submodules https://github.com/google/ngx_brotli.git 
+#nginx-ts-module
+git clone https://github.com/arut/nginx-ts-module.git
 
 # Download zlib
 wget "https://github.com/madler/zlib/archive/refs/tags/v$zlib_version.tar.gz" -O - | tar -xz
@@ -27,7 +32,16 @@ wget "https://www.openssl.org/source/openssl-$openssl_version.tar.gz" -O - | tar
 
 cd ./nginx-$nginx_version/
 
-./configure --with-compat --add-dynamic-module=../ngx_brotli --with-zlib=../zlib-$zlib_version --add-dynamic-module=../ngx_cache_purge --with-pcre=../pcre2-$pcre_version --with-openssl=../openssl-$openssl_version 
-make modules
-cd ..
-tar -cvf ./modules.tar.gz ./nginx-$nginx_version/objs/*.so
+./configure --prefix=/usr/local/nginx \ --with-http_mp4_module --with-http_auth_request_module --with-http_dav_module \
+ --with-http_geoip_module --with-http_gzip_static_module --with-http_v2_module \
+ --with-stream --with-stream_ssl_preread_module --with-threads --with-file-aio \
+ --with-http_addition_module --with-http_stub_status_module --with-http_ssl_module \
+ --with-http_realip_module --with-http_sub_module --with-http_gzip_static_module \
+ --with-pcre=../pcre2-$pcre_version --with-http_xslt_module --with-http_secure_link_module \
+ --with-openssl=../openssl-$openssl_version --with-zlib=../zlib-$zlib_version \
+ --add-module=../nginx-ts-module  --add-module=../ngx_devel_kit set-misc-nginx-module \
+ --without-http_uwsgi_module --without-http_scgi_module
+
+make -j $(nproc)
+make install
+
