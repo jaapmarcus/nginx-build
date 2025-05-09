@@ -32,7 +32,8 @@ wget "https://www.openssl.org/source/openssl-$openssl_version.tar.gz" -O - | tar
 
 cd ./nginx-$nginx_version/
 
-./configure --prefix=/usr/local/nginx \ --with-http_mp4_module --with-http_auth_request_module --with-http_dav_module \
+./configure --prefix=/usr/local/nginx --sbin-path=/usr/sbin/nginx \
+ --with-http_mp4_module --with-http_auth_request_module --with-http_dav_module \
  --with-http_geoip_module --with-http_gzip_static_module --with-http_v2_module \
  --with-stream --with-stream_ssl_preread_module --with-threads --with-file-aio \
  --with-http_addition_module --with-http_stub_status_module --with-http_ssl_module \
