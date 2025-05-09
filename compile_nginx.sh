@@ -8,7 +8,7 @@ openssl_version="3.5.0"
 
 # Install dependencies
 apt-get update
-apt-get install wget git make gcc ibxslt-dev libgeoip-dev libgd-dev -y
+apt-get install wget git make gcc libxslt-dev libgeoip-dev libgd-dev -y
 
 cd ./
 wget "https://nginx.org/download/nginx-$nginx_version.tar.gz" -O - | tar -xz
