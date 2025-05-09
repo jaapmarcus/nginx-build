@@ -6,7 +6,7 @@ zlib_version="1.3.1"
 pcre_version="10.45"
 openssl_version="3.5.0"
 
-
+# Install dependencies
 apt-get update
 apt-get install wget git make gcc -y
 
