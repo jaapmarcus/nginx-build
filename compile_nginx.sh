@@ -40,7 +40,7 @@ cd ./nginx-$nginx_version/
  --with-http_realip_module --with-http_sub_module --with-http_gzip_static_module \
  --with-pcre=../pcre2-$pcre_version --with-http_xslt_module --with-http_secure_link_module \
  --with-openssl=../openssl-$openssl_version --with-zlib=../zlib-$zlib_version \
- --add-module=../nginx-ts-module  --add-module=../ngx_devel_kit set-misc-nginx-module \
+ --add-module=../nginx-ts-module  --add-module=../ngx_devel_kit --add-module=set-misc-nginx-module \
  --without-http_uwsgi_module --without-http_scgi_module
 
 make -j $(nproc)
